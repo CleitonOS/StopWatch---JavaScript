@@ -86,6 +86,10 @@ button:hover{
 }
 
 @media screen and (max-width: 530px) {
+  body{
+    min-height: 85vh;
+  }
+
   .wrapper {
     width: 300px;
     height: 300px;

@@ -59,7 +59,7 @@ window.onload = function () {
         // Verificando se ainda não chegamos a 60 segundos
         if (secondsCircle <= 60) {
             // Agendando a próxima parte do círculo após 1 segundo
-            setTimeout(drawCirclePart, 1000);
+            setTimeout(drawCirclePart, 1010);
         }
     }
 
