@@ -79,13 +79,19 @@ window.onload = function () {
     var buttonReset = document.getElementById("button-reset")
     var Interval;
 
+    // Lógica para não acrescentar a contagem sem querer
+    let clicked = false;
+
     // Lógica do botão de Start - Começar cronômetro
 
     buttonStart.onclick = function () {
-        clearInterval(Interval);
-        Interval = setInterval(startTimer, 10);
-        isDrawing = true;
-        drawCirclePart();
+        if(!clicked){
+            clearInterval(Interval);
+            Interval = setInterval(startTimer, 10);
+            isDrawing = true;
+            clicked = true;
+            drawCirclePart();
+        }
     }
 
     // Lógica do botão Stop - Parar cronômetro
@@ -93,6 +99,7 @@ window.onload = function () {
     buttonStop.onclick = function () {
         clearInterval(Interval);
         isDrawing = false;
+        clicked = false;
     }
 
     // Lógica do botão Reset - Para zerar o cronômetro
