@@ -116,6 +116,8 @@ window.onload = function () {
         // Limpar o canvas
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         isDrawing = false;
+
+        clicked = false;
     }
 
     // Lógica da contagem dos milisegundos, segundos e minutos
