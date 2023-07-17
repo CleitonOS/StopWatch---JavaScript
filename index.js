@@ -44,7 +44,7 @@ window.onload = function () {
         const endY = centerY + Math.sin(currentAngle + anglePerSecond) * radius;
 
         // Definindo a espessura da linha
-        ctx.lineWidth = 2;
+        ctx.lineWidth = 3;
 
         // Desenhando a parte do círculo
         ctx.beginPath();
@@ -59,7 +59,7 @@ window.onload = function () {
         // Verificando se ainda não chegamos a 60 segundos
         if (secondsCircle <= 60) {
             // Agendando a próxima parte do círculo após 1 segundo
-            setTimeout(drawCirclePart, 1010);
+            setTimeout(drawCirclePart, 1000);
         }
     }
 
