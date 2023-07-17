@@ -1,12 +1,14 @@
 window.onload = function () {
 
-
     // Parte 1 do código - Trabalhando com a API DO CANVAS
     const canvas = document.getElementById('myCanvas');
     const ctx = canvas.getContext('2d');
 
     // Váriavel de controle do desenho
     isDrawing = true;
+
+    // Lógica para não acrescentar a contagem sem querer
+    let clicked = false;
 
     // Definindo o raio e a posição central do círculo
     const radius = 250;
@@ -54,7 +56,7 @@ window.onload = function () {
         ctx.stroke();
 
         // Incrementando o contador de segundos
-        secondsCircle++;
+        secondsCircle = secondsCircle + 1;
 
         // Verificando se ainda não chegamos a 60 segundos
         if (secondsCircle <= 60) {
@@ -79,9 +81,6 @@ window.onload = function () {
     var buttonReset = document.getElementById("button-reset")
     var Interval;
 
-    // Lógica para não acrescentar a contagem sem querer
-    let clicked = false;
-
     // Lógica do botão de Start - Começar cronômetro
 
     buttonStart.onclick = function () {
@@ -100,6 +99,7 @@ window.onload = function () {
         clearInterval(Interval);
         isDrawing = false;
         clicked = false;
+        secondsCircle = seconds;
     }
 
     // Lógica do botão Reset - Para zerar o cronômetro
